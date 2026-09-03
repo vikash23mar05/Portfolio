@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikash Kumar Vivek</title>
+    <style>
+        :root {
+            --bg: #151311;
+            --text-main: #e8e4dc;
+            --text-muted: #8b8577;
+            --blue: #8896f9;
+            --btn-bg: #f5eedc;
+            --btn-text: #151311;
+            --json-key: #a6956b;
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .top-label {
+            color: var(--text-muted);
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 500;
+            margin: 0 0 30px 0;
+            letter-spacing: -1px;
+        }
+
+        h1 .muted {
+            color: var(--text-muted);
+        }
+
+        h1 .underline {
+            border-bottom: 3px solid var(--blue);
+            padding-bottom: 4px;
+            display: inline-block;
+        }
+
+        .typewriter-wrapper {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--blue);
+            animation: typing 1.2s steps(7, end) forwards, blink-caret 0.75s step-end infinite;
+            vertical-align: baseline;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 7ch; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--blue); }
+        }
+
+        .json-block {
+            border-left: 2px solid var(--blue);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+
+        .json-block .filename {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .json-block .key {
+            color: var(--json-key);
+        }
+        
+        .json-block .bracket {
+            color: var(--text-main);
+        }
+
+        pre {
+            margin: 0;
+            font-family: var(--font-mono);
+            white-space: pre-wrap;
+        }
+
+        .btn {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 12px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 40px;
+            text-decoration: none;
+        }
+
+        .section-label {
+            color: var(--text-muted);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* Experience Bullet List Style */
+        .experience-list {
+            margin: 0 0 30px 0;
+            padding-left: 18px;
+            color: var(--text-main);
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        .experience-list li {
+            margin-bottom: 10px;
+        }
+
+        .experience-list strong {
+            color: var(--blue);
+        }
+
+        /* Project Card Layout with Image */
+        .project-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border: 1px dashed #332f2a;
+            padding: 20px;
+        }
+
+        .project-img {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            border: 2px solid #332f2a;
+            background-color: #1f1b17;
+            flex-shrink: 0;
+        }
+
+        .project-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .project-info h3 a {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+
+        .project-info ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .project-info li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-label">A DEVELOPER PORTFOLIO</div>
+        
+        <h1>
+            <span class="underline">
+                <span class="muted">[</span><span class="typewriter-wrapper">heyyvkv</span><span class="muted">]</span>
+            </span>
+        </h1>
+
+        <div class="json-block">
+            <span class="filename">profile/vikash.json</span>
+            <pre>
+<span class="bracket">{</span>
+  <span class="key">"name"</span>:       "Vikash Kumar Vivek",
+  <span class="key">"education"</span>:  "B.Tech CSE @ NSUT Delhi (2023-2027)",
+  <span class="key">"experience"</span>: ["Software Engineer Intern @ Giga Soft", "Data & Automations Intern @ Moretasks"],
+  <span class="key">"stack"</span>:      ["Next.js", "Node.js", "Python", "Redis", "MongoDB", "SQL"]
+<span class="bracket">}</span></pre>
+        </div>
+
+        <a href="mailto:vikash23mar05@gmail.com" class="btn">Contact Me</a>
+
+        <div class="section-label">PROJECTS</div>
+
+        <!-- Project 1: Nexel -->
+        <div class="project-card">
+            <img src="https://raw.githubusercontent.com/vikash23mar05/Nexel/main/public/Login.png" alt="Nexel Preview" class="project-img">
+            <div class="project-info">
+                <h3><a href="https://nexel-ai.vercel.app/" target="_blank">Nexel — AI-Powered Learning Workspace</a></h3>
+                <ul>
+                    <li>Transforms uploaded PDF documents into interactive study summaries, automated mindmaps, and instant chat sessions[cite: 1].</li>
+                    <li>RAG-based Q&A pipeline retrieving exact context passages and streaming real-time model responses[cite: 1].</li>
+                    <li>Real-time multi-user collaborative text highlighting backed by Socket.io and secure JWT authentication[cite: 1].</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 2: BookMyScreen -->
+        <div class="project-card">
+            <div class="project-img" style="display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-size:10px;">[BMS IMG]</div>
+            <div class="project-info">
+                <h3><a href="https://book-my-screen-two.vercel.app/" target="_blank">BookMyScreen — Real-Time Ticket Booking Platform</a></h3>
+                <ul>
+                    <li>High-concurrency seat-locking engine using Redis and Socket.io to prevent double-bookings during checkout[cite: 1].</li>
+                    <li>Atomic transaction flows in MongoDB ensuring bulletproof payment consistency alongside Razorpay integration[cite: 1].</li>
+                    <li>Automated data-sync script indexing live movie feeds straight from the TMDB API[cite: 1].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-label">EXPERIENCE & INTERNSHIPS</div>
+        
+        <ul class="experience-list">
+            <li><strong>Software Engineer Intern @ Giga Soft Systems (May 2026 - Jul 2026):</strong> Developed and enhanced features for a B2B Distributor Ordering Platform, implementing RESTful APIs, server-side validation, and role-based access control (RBAC)[cite: 1].</li>
+            <li><strong>Data & Automations Intern @ Moretasks (May 2025 - Jul 2025):</strong> Built cross-functional Slack-integrated workflows, automated asset pipelines for design teams, and optimized content-to-publish deployment systems[cite: 1].</li>
+            <li><strong>Project Intern @ Saahas NGO (Jun 2023 - Aug 2023):</strong> Standardised data architecture and built SQL-based reporting templates for 1,000+ households, cutting reconciliation time by 40%[cite: 1].</li>
+        </ul>
+    </div>
+</body>
+</html>
