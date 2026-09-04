@@ -16,6 +16,10 @@
             --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: var(--bg);
             color: var(--text-main);
@@ -40,10 +44,11 @@
         }
 
         h1 {
-            font-size: 56px;
+            font-size: clamp(32px, 9vw, 56px);
             font-weight: 500;
             margin: 0 0 30px 0;
             letter-spacing: -1px;
+            word-break: break-word;
         }
 
         h1 .muted {
@@ -63,6 +68,7 @@
             border-right: 3px solid var(--blue);
             animation: typing 1.2s steps(7, end) forwards, blink-caret 0.75s step-end infinite;
             vertical-align: baseline;
+            max-width: 100%;
         }
 
         @keyframes typing {
@@ -82,6 +88,8 @@
             font-size: 14px;
             line-height: 1.6;
             color: var(--text-main);
+            max-width: 100%;
+            overflow-x: auto;
         }
 
         .json-block .filename {
@@ -93,7 +101,7 @@
         .json-block .key {
             color: var(--json-key);
         }
-        
+
         .json-block .bracket {
             color: var(--text-main);
         }
@@ -102,6 +110,7 @@
             margin: 0;
             font-family: var(--font-mono);
             white-space: pre-wrap;
+            word-break: break-word;
         }
 
         .btn {
@@ -160,9 +169,14 @@
             flex-shrink: 0;
         }
 
+        .project-info {
+            min-width: 0;
+        }
+
         .project-info h3 {
             margin: 0 0 10px 0;
             font-size: 16px;
+            word-break: break-word;
         }
 
         .project-info h3 a {
@@ -181,12 +195,63 @@
         .project-info li {
             margin-bottom: 4px;
         }
+
+        /* Responsive breakpoints */
+        @media (max-width: 640px) {
+            body {
+                padding: 24px 18px;
+            }
+
+            .top-label {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+
+            .json-block {
+                padding-left: 14px;
+                font-size: 12.5px;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+                margin-bottom: 34px;
+            }
+
+            .project-card {
+                flex-direction: column;
+                padding: 16px;
+                gap: 14px;
+            }
+
+            .project-img {
+                width: 100%;
+                height: 160px;
+            }
+
+            .experience-list {
+                font-size: 13.5px;
+                padding-left: 16px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            h1 {
+                font-size: clamp(26px, 11vw, 40px);
+            }
+
+            .json-block {
+                font-size: 11.5px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="top-label">A DEVELOPER PORTFOLIO</div>
-        
+
         <h1>
             <span class="underline">
                 <span class="muted">[</span><span class="typewriter-wrapper">heyyvkv</span><span class="muted">]</span>
@@ -214,9 +279,9 @@
             <div class="project-info">
                 <h3><a href="https://nexel-ai.vercel.app/" target="_blank">Nexel — AI-Powered Learning Workspace</a></h3>
                 <ul>
-                    <li>Transforms uploaded PDF documents into interactive study summaries, automated mindmaps, and instant chat sessions[cite: 1].</li>
-                    <li>RAG-based Q&A pipeline retrieving exact context passages and streaming real-time model responses[cite: 1].</li>
-                    <li>Real-time multi-user collaborative text highlighting backed by Socket.io and secure JWT authentication[cite: 1].</li>
+                    <li>Transforms uploaded PDF documents into interactive study summaries, automated mindmaps, and instant chat sessions.</li>
+                    <li>RAG-based Q&A pipeline retrieving exact context passages and streaming real-time model responses.</li>
+                    <li>Real-time multi-user collaborative text highlighting backed by Socket.io and secure JWT authentication.</li>
                 </ul>
             </div>
         </div>
@@ -227,19 +292,19 @@
             <div class="project-info">
                 <h3><a href="https://book-my-screen-two.vercel.app/" target="_blank">BookMyScreen — Real-Time Ticket Booking Platform</a></h3>
                 <ul>
-                    <li>High-concurrency seat-locking engine using Redis and Socket.io to prevent double-bookings during checkout[cite: 1].</li>
-                    <li>Atomic transaction flows in MongoDB ensuring bulletproof payment consistency alongside Razorpay integration[cite: 1].</li>
-                    <li>Automated data-sync script indexing live movie feeds straight from the TMDB API[cite: 1].</li>
+                    <li>High-concurrency seat-locking engine using Redis and Socket.io to prevent double-bookings during checkout.</li>
+                    <li>Atomic transaction flows in MongoDB ensuring bulletproof payment consistency alongside Razorpay integration.</li>
+                    <li>Automated data-sync script indexing live movie feeds straight from the TMDB API.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section-label">EXPERIENCE & INTERNSHIPS</div>
-        
+
         <ul class="experience-list">
-            <li><strong>Software Engineer Intern @ Giga Soft Systems (May 2026 - Jul 2026):</strong> Developed and enhanced features for a B2B Distributor Ordering Platform, implementing RESTful APIs, server-side validation, and role-based access control (RBAC)[cite: 1].</li>
-            <li><strong>Data & Automations Intern @ Moretasks (May 2025 - Jul 2025):</strong> Built cross-functional Slack-integrated workflows, automated asset pipelines for design teams, and optimized content-to-publish deployment systems[cite: 1].</li>
-            <li><strong>Project Intern @ Saahas NGO (Jun 2023 - Aug 2023):</strong> Standardised data architecture and built SQL-based reporting templates for 1,000+ households, cutting reconciliation time by 40%[cite: 1].</li>
+            <li><strong>Software Engineer Intern @ Giga Soft Systems (May 2026 - Jul 2026):</strong> Developed and enhanced features for a B2B Distributor Ordering Platform, implementing RESTful APIs, server-side validation, and role-based access control (RBAC).</li>
+            <li><strong>Data & Automations Intern @ Moretasks (May 2025 - Jul 2025):</strong> Built cross-functional Slack-integrated workflows, automated asset pipelines for design teams, and optimized content-to-publish deployment systems.</li>
+            <li><strong>Project Intern @ Saahas NGO (Jun 2023 - Aug 2023):</strong> Standardised data architecture and built SQL-based reporting templates for 1,000+ households, cutting reconciliation time by 40%.</li>
         </ul>
     </div>
 </body>
